@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, {  useEffect, useState } from 'react';
 import './Gallery.css';
 import Masonry, {ResponsiveMasonry} from "react-responsive-masonry"
 
 const Gallery = () => {
+    
     const [photos, setPhotos] = useState([]);
   
     useEffect(() => {
@@ -14,22 +15,24 @@ const Gallery = () => {
         })
     }, [])
 
- 
+    
  
     return (
     <div className='mx-20'> 
     {
         photos.map(photo => {
-            console.log(photo)
+            // console.log(photo)
         })
     }
         <div className='text-4xl text-center py-10'>Gallery</div>
-         <ResponsiveMasonry
+        
+         <div>
+            <ResponsiveMasonry
                 columnsCountBreakPoints={{350: 1, 750: 2, 900: 3}}
             >
                 <Masonry gutter='20px'>
                     {photos.map((photo, i) => (
-                        <>
+                        <div className='shadow-md'>
                         <img
                             className='rounded-lg'
                             key={i}
@@ -37,7 +40,7 @@ const Gallery = () => {
                             style={{width: "100%", display: "block"}}
                             alt=""
                         />
-                        <div className='flex justify-between py-5'>
+                        <div className='flex justify-between py-5 px-5'>
                             <div className='flex items-center'>
                                 <img className='rounded-full ' src={photo.user.profile_image.small} alt="" />
                                 <div className='ps-2'>
@@ -50,11 +53,12 @@ const Gallery = () => {
                             </div>
                         </div>
                          
-                        </>
+                        </div>
                         
                     ))}
                 </Masonry>
-            </ResponsiveMasonry>
+          </ResponsiveMasonry>
+         </div>
             
             </div>
        

@@ -1,6 +1,6 @@
 import React from 'react';
 import './Banner.css'
-
+ 
 const Banner = () => {
     return (
         <div className='background h-[450px]'>
@@ -19,6 +19,7 @@ const Banner = () => {
                 </div>
                 </div>
              </div>
+             
         </div>
     );
 };
